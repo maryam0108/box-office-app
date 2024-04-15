@@ -15,6 +15,5 @@ export const getShowById = showId =>
 export const getShowsByIds = async showIds => {
   const promises = showIds.map(showId => apiGet(`/shows/${showId}`));
 
-  const result = await Promise.all(promises);
-  return result;
+  return Promise.all(promises);
 };
